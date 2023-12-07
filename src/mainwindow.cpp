@@ -12,7 +12,7 @@ MainWindow::MainWindow()
     m_ui.setupUi( this );
     m_ui.lineEdit->setFocus();
     connect( m_ui.lineEdit, &QLineEdit::editingFinished, [ this ] { enterItem( m_ui.lineEdit->text() ); } );
-    connect( m_ui.pushButton, &QPushButton::clicked, [ this ] {
+    connect( m_ui.checkout, &QPushButton::clicked, [ this ] {
         dialog::Checkout( price_to_str( _total_price ) ).exec();
         reset();
     } );
